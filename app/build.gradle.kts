@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "life.catchyour.androidappcomposer"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "life.catchyour.androidappcomposer"

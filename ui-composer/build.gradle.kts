@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.maven.publish)
+    id("maven-publish")
 }
 
 android {
@@ -37,25 +37,48 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
-//    implementation(libs.androidx.animation)
+    implementation(libs.androidx.animation.core.android)
+    implementation(libs.androidx.foundation.layout.android)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling)
     implementation(libs.androidx.ui.tooling.preview)
-/*    implementation(libs.androidx.material)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.material.icons.core)
-    implementation(libs.androidx.material.icons.extended)*/
     implementation(libs.material)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.animation.core.android)
+    implementation(libs.androidx.storage)
+    implementation(libs.androidx.foundation.layout.android)
+    implementation(libs.androidx.foundation.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "life.catchyour.dev"
+            artifactId = "app-composer"
+            version = "0.0.2"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }
