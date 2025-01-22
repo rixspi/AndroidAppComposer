@@ -41,6 +41,15 @@ android {
 
 dependencies {
     implementation(project(":ui-composer"))
+    implementation(project(":nav-composer"))
+
+    // testing stuff out
+    implementation(libs.orbit.core)
+    implementation(libs.orbit.compose)
+
+    implementation(libs.simple.stack)
+    implementation(libs.simple.stack.extensions)
+    implementation(libs.simple.stack.compose.integration)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

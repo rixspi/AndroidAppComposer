@@ -1,12 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
     id("maven-publish")
 }
 
 android {
-    namespace = "life.catchyour.ui_composer"
+    namespace = "life.catchyour.nav_composer"
     compileSdk = 35
 
     defaultConfig {
@@ -25,11 +24,6 @@ android {
             )
         }
     }
-
-    buildFeatures {
-        compose = true
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -37,33 +31,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
 dependencies {
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.animation.core.android)
-    implementation(libs.androidx.foundation.layout.android)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    implementation(libs.material)
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.animation.core.android)
-    implementation(libs.androidx.storage)
-    implementation(libs.androidx.foundation.layout.android)
-    implementation(libs.androidx.foundation.android)
-
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -73,7 +47,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "life.catchyour.dev"
-            artifactId = "ui-composer"
+            artifactId = "nav-composer"
             version = "0.0.1"
 
             afterEvaluate {

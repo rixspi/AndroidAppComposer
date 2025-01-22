@@ -11,11 +11,17 @@ composeBom = "2025.01.00"
 appcompat = "1.7.0"
 material = "1.12.0"
 animationCoreAndroid = "1.7.6"
+simpleStack = "2.9.0"
+simpleStackComposeIntegration = "0.13.0"
+simpleStackExtensions = "2.3.4"
 storage = "1.5.0"
 foundationLayoutAndroid = "1.7.6"
 foundationAndroid = "1.7.6"
+orbitCore = "9.0.0"
 
 [libraries]
+orbit-compose = { module = "org.orbit-mvi:orbit-compose", version.ref = "orbitCore" }
+orbit-core = { module = "org.orbit-mvi:orbit-core", version.ref = "orbitCore" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -36,6 +42,9 @@ androidx-animation-core-android = { group = "androidx.compose.animation", name =
 androidx-storage = { group = "androidx.test.services", name = "storage", version.ref = "storage" }
 androidx-foundation-layout-android = { group = "androidx.compose.foundation", name = "foundation-layout-android", version.ref = "foundationLayoutAndroid" }
 androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroid" }
+simple-stack = { module = "com.github.Zhuinden:simple-stack", version.ref = "simpleStack" }
+simple-stack-compose-integration = { module = "com.github.Zhuinden:simple-stack-compose-integration", version.ref = "simpleStackComposeIntegration" }
+simple-stack-extensions = { module = "com.github.Zhuinden:simple-stack-extensions", version.ref = "simpleStackExtensions" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
