@@ -23,3 +23,4 @@ rootProject.name = "AndroidAppComposer"
 include(":app")
 include(":ui-composer")
 include(":nav-composer")
+include(":http-composer")

@@ -12,12 +12,13 @@ appcompat = "1.7.0"
 material = "1.12.0"
 animationCoreAndroid = "1.7.6"
 simpleStack = "2.9.0"
-simpleStackComposeIntegration = "0.13.0"
+simpleStackComposeIntegration = "0.13.1"
 simpleStackExtensions = "2.3.4"
 storage = "1.5.0"
 foundationLayoutAndroid = "1.7.6"
 foundationAndroid = "1.7.6"
 orbitCore = "9.0.0"
+ktor = "3.0.3"
 
 [libraries]
 orbit-compose = { module = "org.orbit-mvi:orbit-compose", version.ref = "orbitCore" }
@@ -45,6 +46,13 @@ androidx-foundation-android = { group = "androidx.compose.foundation", name = "f
 simple-stack = { module = "com.github.Zhuinden:simple-stack", version.ref = "simpleStack" }
 simple-stack-compose-integration = { module = "com.github.Zhuinden:simple-stack-compose-integration", version.ref = "simpleStackComposeIntegration" }
 simple-stack-extensions = { module = "com.github.Zhuinden:simple-stack-extensions", version.ref = "simpleStackExtensions" }
+
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
