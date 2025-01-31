@@ -48,3 +48,17 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "life.catchyour.dev"
+            artifactId = "http-composer"
+            version = "0.0.1"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
